@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sanjeev Biswas | Palash Chauhan</title>
+    <link>/authors/sanjeev-biswas/</link>
+      <atom:link href="/authors/sanjeev-biswas/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sanjeev Biswas</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Mar 2017 00:00:00 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Sanjeev Biswas</title>
+      <link>/authors/sanjeev-biswas/</link>
+    </image>
+    
+    <item>
+      <title>Application Tool Recommendation</title>
+      <link>/publication/topicmodels/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/publication/topicmodels/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

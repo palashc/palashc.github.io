@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags | Palash Chauhan</title>
+    <link>/tags/</link>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 29 Dec 2019 15:21:34 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>/tags/</link>
+    </image>
+    
+    <item>
+      <title>Systems</title>
+      <link>/tags/systems/</link>
+      <pubDate>Sun, 29 Dec 2019 15:21:34 -0800</pubDate>
+      <guid>/tags/systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer Architecture</title>
+      <link>/tags/computer-architecture/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 -0700</pubDate>
+      <guid>/tags/computer-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian ML</title>
+      <link>/tags/bayesian-ml/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 -0700</pubDate>
+      <guid>/tags/bayesian-ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 -0700</pubDate>
+      <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Adobe Creative Cloud</title>
+      <link>/tags/adobe-creative-cloud/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/tags/adobe-creative-cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Big Data Analysis</title>
+      <link>/tags/big-data-analysis/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/tags/big-data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Topic Models</title>
+      <link>/tags/topic-models/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/tags/topic-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/tags/deep-learning/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 -0800</pubDate>
+      <guid>/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

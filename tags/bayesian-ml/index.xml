@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayesian ML | Palash Chauhan</title>
+    <link>/tags/bayesian-ml/</link>
+      <atom:link href="/tags/bayesian-ml/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bayesian ML</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Apr 2017 00:00:00 -0700</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Bayesian ML</title>
+      <link>/tags/bayesian-ml/</link>
+    </image>
+    
+    <item>
+      <title>Poisson Matrix Factorization</title>
+      <link>/project/poisson/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 -0700</pubDate>
+      <guid>/project/poisson/</guid>
+      <description>&lt;p&gt;Recommendation systems are a vital component of the modern web. They help readers effectively navigate otherwise
+unwieldy archives of information and help websites direct users to items - movies, articles, songs, products that they
+will like. Collaborative filtering is one of the techniques used for building recommendation systems which involves
+inferring user preferences and item attributes from data. &lt;/br&gt; In this project, I studied various models for Bayesian Recommender Systems including Poisson Matrix Factorization and its extensions like Hierarchical Poisson Matrix Factorization and Bayesian Non-parametric Poisson Matrix Factorization. I analyzed the effect of latent dimensions on the models and learnt the use of auxiliary variables in variational inference to make the models locally conjugate and facilitate inference. I also evaluated their performance on MovieLens 1M dataset.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

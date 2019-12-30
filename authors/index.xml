@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Palash Chauhan</title>
+    <link>/authors/</link>
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Mar 2017 00:00:00 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
+    
+    <item>
+      <title>Aditya Gupta</title>
+      <link>/authors/aditya-gupta/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/authors/aditya-gupta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Naman Jain</title>
+      <link>/authors/naman-jain/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/authors/naman-jain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Palash Chauhan</title>
+      <link>/authors/palash-chauhan/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/authors/palash-chauhan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sanjeev Biswas</title>
+      <link>/authors/sanjeev-biswas/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/authors/sanjeev-biswas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;I am a Master&#39;s student in the &lt;a href=&#34;https://cse.ucsd.edu/&#34;&gt;Computer Science&lt;/a&gt; department at &lt;a href=&#34;https://ucsd.edu/&#34;&gt;University of California, San Diego&lt;/a&gt;. My interests include Distributed Systems, Machine Learning and the intersection of the two. I was a Software Developer in the &lt;a href=&#34;https://www.adobe.com/in/advertising-cloud/media-optimizer.html&#34;&gt;Adobe Media Optimizer&lt;/a&gt; team at &lt;a href=&#34;https://www.adobe.com&#34;&gt;Adobe&lt;/a&gt; where I built a streaming architeture for search advertising attribution. I graduated from &lt;a href=&#34;https://www.iitk.ac.in&#34;&gt;IIT Kanpur&lt;/a&gt; in 2017 with a major in Computer Science and Engineering. In the summer of 2016, I interned at &lt;a href=&#34;https://research.adobe.com/about-adobe-research/bigdata-experience-lab/&#34;&gt;Adobe BigData Experience Lab&lt;/a&gt; where I worked on integrating a Topic Model based prediction system within Adobe Illustrator.&lt;/p&gt;
+&lt;p&gt;My hobbies include reading and playing all kinds of sports - Badminton, TT, Tennis, Squash, Basketball. I was a member of the Badminton team at IIT Kanpur and won several tournaments for the institute.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

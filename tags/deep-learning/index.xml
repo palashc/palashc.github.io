@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning | Palash Chauhan</title>
+    <link>/tags/deep-learning/</link>
+      <atom:link href="/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Deep Learning</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 11 Dec 2016 00:00:00 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Deep Learning</title>
+      <link>/tags/deep-learning/</link>
+    </image>
+    
+    <item>
+      <title>Dense Image Captioning</title>
+      <link>/project/dense/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 -0800</pubDate>
+      <guid>/project/dense/</guid>
+      <description>&lt;p&gt;Dense captioning is a task which requires a computer vision system to both localize and describe salient regions in images in natural language. The dense captioning task generalizes object detection when the descriptions consist of a single word, and Image Captioning when one predicted region covers the full image. &amp;ldquo;DenseCap: Fully Convolutional Localization Networks for Dense Captioning&amp;rdquo; by Karpathy et. al. proposed a Fully Convolutional Localization Network (FCLN) architecture that processes an image with a single, efficient forward pass, requires no external regions proposals, and can be trained end-to-end with a single round of optimization. The architecture is composed of a Convolutional Network, a novel dense localization layer, and Recurrent Neural Network language model that generates the label sequences. &lt;/br&gt;In this project, we tried two things. First was to reproduce the results obtained by the authors to get familiar with the codebase. Second, we replaced the test time Non-Maximal Supression with a Tyrolean Network as described in &amp;ldquo;A convnet for non-maximum suppression&amp;rdquo; by Hosang et. al. We were able to obtain a slight increase in the Mean Average Precision of DenseCap compared to our run of the original code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Automatic Abstract Generation</title>
+      <link>/project/nlp/</link>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 -0800</pubDate>
+      <guid>/project/nlp/</guid>
+      <description>&lt;p&gt;As the problem of information overload grows, and as the amount of data increases, the interest in automatic summarization is also increasing. There has been a lot of reserach work in the area of text summarization. Summarization can be achieved either by extracting elements from the input (Extractive) or by understanding the content of the input and using language generation techniques (Abstractive).
+Both these methods do not perform well on long documents like research papers. Through this project, we proposed an approach for automatic summarization which is a combination of both these methods. Salient sentences are first extracted from the long document which are then fed to a sequence-to-sequence RNN. We experimented with a number of ways to extract salient elements like LDA, LSA and TextRank and fed the best extraction to an RNN to generate an enhanced summary. We evaluated the generated summaries using the ROUGE metric on a dataset containing research papers from NIPS 2015.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

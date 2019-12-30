@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Big Data Analysis | Palash Chauhan</title>
+    <link>/tags/big-data-analysis/</link>
+      <atom:link href="/tags/big-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Big Data Analysis</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Mar 2017 00:00:00 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Big Data Analysis</title>
+      <link>/tags/big-data-analysis/</link>
+    </image>
+    
+    <item>
+      <title>Application Tool Recommendation</title>
+      <link>/publication/topicmodels/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/publication/topicmodels/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

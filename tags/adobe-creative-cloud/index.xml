@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adobe Creative Cloud | Palash Chauhan</title>
+    <link>/tags/adobe-creative-cloud/</link>
+      <atom:link href="/tags/adobe-creative-cloud/index.xml" rel="self" type="application/rss+xml" />
+    <description>Adobe Creative Cloud</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Mar 2017 00:00:00 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Adobe Creative Cloud</title>
+      <link>/tags/adobe-creative-cloud/</link>
+    </image>
+    
+    <item>
+      <title>Application Tool Recommendation</title>
+      <link>/publication/topicmodels/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/publication/topicmodels/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

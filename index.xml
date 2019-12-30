@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Palash Chauhan</title>
+    <link>/</link>
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <description>Palash Chauhan</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 29 Dec 2019 15:21:34 -0800</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Palash Chauhan</title>
+      <link>/</link>
+    </image>
+    
+    <item>
+      <title>Benchmarking Druid and Presto</title>
+      <link>/project/drupre/</link>
+      <pubDate>Sun, 29 Dec 2019 15:21:34 -0800</pubDate>
+      <guid>/project/drupre/</guid>
+      <description>&lt;p&gt;In recent years, the proliferation of internet technology has created a surge in machine generated events. These events generally have three parts – timestamp, dimensions and metrics. For example – advertising impression data with dimensions like publisher, gender, country etc and metrics like clicks, price etc. Individually these events contain minimal useful information and are of low value. Earlier, companies were willing to discard this data due to the time and resources required to extract any meaning out of it. But now, big data technology such as Hadoop has contributed much to helping companies convert their low value event streams to high value aggregates for a variety of applications.&lt;/br&gt;&lt;/br&gt;However, Hadoop opens our eyes to new problems. Hadoop is a great batch-processing and data warehousing system but it does not make any performance guarantees and its performance degrades under concurrent workload. If a product’s use case needs guarantees around query performance and data availability in a highly concurrent environment, Hadoop is certainly not going to meet the needs. Using an RDBMS like MySQL or Postgres is not an option since data might be stored in a star schema which will lead to operational overhead and table-scan operations (global counts) will be very slow. Another option is to pre-compute aggregates for all possible combinations of dimensions and store them in a key-value NoSQL store. However, the time required to pre-compute aggregates will increase exponentially with the number of dimensions. While working in the Infrastructure Team at Adobe Media Optimizer, I had to evaluate other big data systems for a similar use-case.&lt;/br&gt;&lt;/br&gt;Druid is a distributed column-oriented real-time analytical data store which has a parallelized architecture and is optimized for OLAP workflows.&lt;/br&gt;&lt;/br&gt;Presto is a distributed SQL query engine designed to query large data sets distributed over one or more heterogeneous data sources.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SurfStore</title>
+      <link>/project/raft/</link>
+      <pubDate>Sun, 29 Dec 2019 15:20:45 -0800</pubDate>
+      <guid>/project/raft/</guid>
+      <description>&lt;p&gt;Getting people to agree on something is hard. Getting machines connected through an asychronous network to agree on something is harder. RAFT is an easy-to-understand consensus protocol which uses leader election and log replication to achieve consensus. In this project, a cloud-based file storage system was built that can survive server failure, datacenter failure, and network failures. Leader election and log replication from the RAFT Consensus protocol were implemented to maintain a consistent state across servers.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Comparing Cloud Models</title>
+      <link>/project/cloud/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 -0800</pubDate>
+      <guid>/project/cloud/</guid>
+      <description>&lt;p&gt;We performed an in-depth analysis of Virtual Machines, Containers and Serverless using two different CPU-bound and IO-bound applications. We can conclude the following observations from our analysis - (i) Serverless is the most convenient for deploying and maintaining an application closely followed by Containers. The deploy- ment is much slower for Virtual Machines. (ii) For dif- ferent types of workloads, Containers give a better per- formance and scalability compared to Virtual Machines and Serverless. (iii) From a monetary standpoint, Server- less and Containers are cheaper compared to Virtual Ma- chines for smaller workloads, but Containers are the best option for larger workloads. Containers and Virtual ma- chine are more suitable for building services which need to be always online so as to avoid the overhead of load- ing the state in Serverless. Our study and the results have helped us understand the various dimensions of deploy- ing applications in the cloud and we will be able to take an informed decision in the future.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Load Value Prediction</title>
+      <link>/project/lvp/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 -0700</pubDate>
+      <guid>/project/lvp/</guid>
+      <description>&lt;p&gt;Data dependencies can severely hinder Instruction Level Parallelism (ILP). Data dependencies decrease ILP when long latency instructions flow through the pipeline, and there are not enough independent instructions available to keep the processor busy. Data dependent instructions will stall behind these long latency instructions, potentially creating one or several critical paths through a portion of the program. Load Value Prediction (LVP) is an approach that breaks data dependency on load instructions by predicting the value which is fetched by the instruction. LVP exploits value locality which can be defined as the likelihood of a previously-seen value recurring repeatedly within a storage location. In this project, we explore this notion of value locality, exploit it in order to perform load value prediction and analyze the performance on SPEC2006 Benchmarks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Poisson Matrix Factorization</title>
+      <link>/project/poisson/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 -0700</pubDate>
+      <guid>/project/poisson/</guid>
+      <description>&lt;p&gt;Recommendation systems are a vital component of the modern web. They help readers effectively navigate otherwise
+unwieldy archives of information and help websites direct users to items - movies, articles, songs, products that they
+will like. Collaborative filtering is one of the techniques used for building recommendation systems which involves
+inferring user preferences and item attributes from data. &lt;/br&gt; In this project, I studied various models for Bayesian Recommender Systems including Poisson Matrix Factorization and its extensions like Hierarchical Poisson Matrix Factorization and Bayesian Non-parametric Poisson Matrix Factorization. I analyzed the effect of latent dimensions on the models and learnt the use of auxiliary variables in variational inference to make the models locally conjugate and facilitate inference. I also evaluated their performance on MovieLens 1M dataset.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Application Tool Recommendation</title>
+      <link>/publication/topicmodels/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+      <guid>/publication/topicmodels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Malware Detection using Machine Learning</title>
+      <link>/project/malware/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 -0800</pubDate>
+      <guid>/project/malware/</guid>
+      <description>&lt;p&gt;Malwares remain a large problem as attackers use them to disrupt systems which in turn result in costly after effects. Malware detec-
+tion is mainly carries out using heuristic and signature-based methods which fails to perform due to continuous evolution of different
+malware families. In the past decade, Deep Learning has shown very strong promises in order to solve any given problem. This project explores ways to detect malwares by extracting features from binaries and using these to train a deep neural network. Experiments were also carried out using AutoEncoders, LSTM and CNN. We also experimented with raw byte sequence as a feature and the results shows that the neural network is able to learn quite good and extract meaningful information with this raw information.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dense Image Captioning</title>
+      <link>/project/dense/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 -0800</pubDate>
+      <guid>/project/dense/</guid>
+      <description>&lt;p&gt;Dense captioning is a task which requires a computer vision system to both localize and describe salient regions in images in natural language. The dense captioning task generalizes object detection when the descriptions consist of a single word, and Image Captioning when one predicted region covers the full image. &amp;ldquo;DenseCap: Fully Convolutional Localization Networks for Dense Captioning&amp;rdquo; by Karpathy et. al. proposed a Fully Convolutional Localization Network (FCLN) architecture that processes an image with a single, efficient forward pass, requires no external regions proposals, and can be trained end-to-end with a single round of optimization. The architecture is composed of a Convolutional Network, a novel dense localization layer, and Recurrent Neural Network language model that generates the label sequences. &lt;/br&gt;In this project, we tried two things. First was to reproduce the results obtained by the authors to get familiar with the codebase. Second, we replaced the test time Non-Maximal Supression with a Tyrolean Network as described in &amp;ldquo;A convnet for non-maximum suppression&amp;rdquo; by Hosang et. al. We were able to obtain a slight increase in the Mean Average Precision of DenseCap compared to our run of the original code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Automatic Abstract Generation</title>
+      <link>/project/nlp/</link>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 -0800</pubDate>
+      <guid>/project/nlp/</guid>
+      <description>&lt;p&gt;As the problem of information overload grows, and as the amount of data increases, the interest in automatic summarization is also increasing. There has been a lot of reserach work in the area of text summarization. Summarization can be achieved either by extracting elements from the input (Extractive) or by understanding the content of the input and using language generation techniques (Abstractive).
+Both these methods do not perform well on long documents like research papers. Through this project, we proposed an approach for automatic summarization which is a combination of both these methods. Salient sentences are first extracted from the long document which are then fed to a sequence-to-sequence RNN. We experimented with a number of ways to extract salient elements like LDA, LSA and TextRank and fed the best extraction to an RNN to generate an enhanced summary. We evaluated the generated summaries using the ROUGE metric on a dataset containing research papers from NIPS 2015.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

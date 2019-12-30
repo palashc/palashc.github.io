@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Architecture | Palash Chauhan</title>
+    <link>/tags/computer-architecture/</link>
+      <atom:link href="/tags/computer-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <description>Computer Architecture</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 12 May 2017 00:00:00 -0700</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Computer Architecture</title>
+      <link>/tags/computer-architecture/</link>
+    </image>
+    
+    <item>
+      <title>Load Value Prediction</title>
+      <link>/project/lvp/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 -0700</pubDate>
+      <guid>/project/lvp/</guid>
+      <description>&lt;p&gt;Data dependencies can severely hinder Instruction Level Parallelism (ILP). Data dependencies decrease ILP when long latency instructions flow through the pipeline, and there are not enough independent instructions available to keep the processor busy. Data dependent instructions will stall behind these long latency instructions, potentially creating one or several critical paths through a portion of the program. Load Value Prediction (LVP) is an approach that breaks data dependency on load instructions by predicting the value which is fetched by the instruction. LVP exploits value locality which can be defined as the likelihood of a previously-seen value recurring repeatedly within a storage location. In this project, we explore this notion of value locality, exploit it in order to perform load value prediction and analyze the performance on SPEC2006 Benchmarks.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
