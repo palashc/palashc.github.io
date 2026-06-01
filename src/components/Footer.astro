@@ -1,0 +1,31 @@
+---
+import { SOCIALS, SITE } from "../config";
+
+const year = new Date().getFullYear();
+
+const links = [
+  { href: `mailto:${SOCIALS.email}`, label: "Email" },
+  { href: SOCIALS.github, label: "GitHub", external: true },
+  { href: SOCIALS.linkedin, label: "LinkedIn", external: true },
+];
+---
+
+<footer
+  class="flex flex-col gap-3 border-t border-zinc-200 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between dark:border-zinc-800 dark:text-zinc-400"
+>
+  <p>© {year} {SITE.author}</p>
+  <nav class="flex gap-4">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          class="transition-colors hover:text-[var(--color-accent)] dark:hover:text-[var(--color-accent-dark)]"
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</footer>

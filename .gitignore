@@ -1,0 +1,11 @@
+# build artifacts handled separately (docs/ is committed for GitHub Pages)
+node_modules/
+.astro/
+dist/
+
+# OS / editor
+.DS_Store
+**/.DS_Store
+.vscode/
+*.log
+npm-debug.log*

@@ -1,0 +1,166 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Experience from "../components/Experience.astro";
+import PostCard from "../components/PostCard.astro";
+import { SOCIALS, BLOG_ENABLED } from "../config";
+
+const posts = BLOG_ENABLED
+  ? (await getCollection("blog", ({ data }) => !data.draft)).sort(
+      (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+    )
+  : [];
+const latest = posts.slice(0, 4);
+---
+
+<BaseLayout>
+  <section class="flex flex-col gap-6 sm:flex-row sm:items-center">
+    <img
+      src="/avatar.jpg"
+      alt="Palash Chauhan"
+      width="96"
+      height="96"
+      class="h-24 w-24 rounded-full object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
+    />
+    <div>
+      <h1
+        class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100"
+      >
+        Palash Chauhan
+      </h1>
+      <p class="mt-1 text-zinc-600 dark:text-zinc-400">
+        Senior Software Engineer at <a
+          href="https://www.salesforce.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+          >Salesforce</a
+        >
+      </p>
+      <div class="mt-3 flex gap-4 text-sm">
+        <a
+          href={`mailto:${SOCIALS.email}`}
+          class="text-zinc-500 transition-colors hover:text-[var(--color-accent)] dark:text-zinc-400 dark:hover:text-[var(--color-accent-dark)]"
+          >Email</a
+        >
+        <a
+          href={SOCIALS.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-zinc-500 transition-colors hover:text-[var(--color-accent)] dark:text-zinc-400 dark:hover:text-[var(--color-accent-dark)]"
+          >GitHub</a
+        >
+        <a
+          href={SOCIALS.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-zinc-500 transition-colors hover:text-[var(--color-accent)] dark:text-zinc-400 dark:hover:text-[var(--color-accent-dark)]"
+          >LinkedIn</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10 space-y-4 leading-relaxed text-zinc-700 dark:text-zinc-300">
+    <p>
+      I'm a Senior Software Engineer at <a
+        href="https://www.salesforce.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+        >Salesforce</a
+      > on the Phoenix Database team, where I help develop and operate a large fleet
+      of <a
+        href="https://phoenix.apache.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+        >Apache Phoenix</a
+      > and <a
+        href="https://hbase.apache.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+        >Apache HBase</a
+      > clusters. I'm interested in distributed systems, databases, and large-scale
+      infrastructure.
+    </p>
+    <p>
+      Previously, I completed my Master's in Computer Science at <a
+        href="https://ucsd.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+        >UC San Diego</a
+      >, focused on distributed systems and machine learning. Before that, I was a
+      Software Developer on the <a
+        href="https://www.adobe.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+        >Adobe</a
+      > Media Optimizer team, where I built a streaming architecture for search-advertising
+      attribution. I earned my B.Tech in Computer Science from <a
+        href="https://www.iitk.ac.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[var(--color-accent)] hover:underline dark:text-[var(--color-accent-dark)]"
+        >IIT Kanpur</a
+      > in 2017, and spent a summer at the Adobe BigData Experience Lab integrating
+      a topic-model-based prediction system into Adobe Illustrator.
+    </p>
+    <p>
+      Outside of work, I play musical instruments like drums and bass, and enjoy
+      sports like badminton, tennis, and basketball.
+    </p>
+  </section>
+
+  <section class="mt-14">
+    <h2
+      class="mb-6 text-sm font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500"
+    >
+      Experience
+    </h2>
+    <Experience />
+  </section>
+
+  {BLOG_ENABLED && (
+  <section class="mt-14">
+    <div class="mb-6 flex items-baseline justify-between">
+      <h2
+        class="text-sm font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500"
+      >
+        Latest posts
+      </h2>
+      {
+        posts.length > latest.length && (
+          <a
+            href="/blog"
+            class="text-sm text-zinc-500 transition-colors hover:text-[var(--color-accent)] dark:text-zinc-400 dark:hover:text-[var(--color-accent-dark)]"
+          >
+            All posts →
+          </a>
+        )
+      }
+    </div>
+    {
+      latest.length === 0 ? (
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          Posts coming soon.
+        </p>
+      ) : (
+        <div class="divide-y divide-zinc-100 dark:divide-zinc-800/60">
+          {latest.map((post) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              url={`/blog/${post.id}/`}
+            />
+          ))}
+        </div>
+      )
+    }
+  </section>
+  )}
+</BaseLayout>

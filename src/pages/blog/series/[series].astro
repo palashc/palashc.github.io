@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getSeriesList, postUrl } from "../../../lib/posts";
+import { BLOG_ENABLED } from "../../../config";
+
+export async function getStaticPaths() {
+  if (!BLOG_ENABLED) return [];
+  const series = await getSeriesList();
+  return series.map((s) => ({
+    params: { series: s.slug },
+    props: { series: s },
+  }));
+}
+
+const { series } = Astro.props;
+const fmt = (d: Date) =>
+  d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+---
+
+<BaseLayout title={series.title} description={series.description}>
+  <a
+    href="/blog"
+    class="text-sm text-zinc-500 transition-colors hover:text-[var(--color-accent)] dark:text-zinc-400 dark:hover:text-[var(--color-accent-dark)]"
+  >
+    ← Blog
+  </a>
+
+  <h1
+    class="mt-4 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100"
+  >
+    {series.title}
+  </h1>
+  <p class="mt-2 text-zinc-600 dark:text-zinc-400">{series.description}</p>
+
+  <ol class="mt-8 space-y-1">
+    {
+      series.posts.map((post, i) => (
+        <li>
+          <a
+            href={postUrl(post)}
+            class="group flex gap-4 rounded-md py-3 transition-colors"
+          >
+            <span class="w-6 shrink-0 text-right text-sm tabular-nums text-zinc-400 dark:text-zinc-500">
+              {i + 1}
+            </span>
+            <span class="flex-1">
+              <span class="flex flex-wrap items-baseline justify-between gap-x-4">
+                <span class="font-medium text-zinc-900 transition-colors group-hover:text-[var(--color-accent)] dark:text-zinc-100 dark:group-hover:text-[var(--color-accent-dark)]">
+                  {post.data.title}
+                </span>
+                <time class="shrink-0 text-sm text-zinc-400 dark:text-zinc-500">
+                  {fmt(post.data.date)}
+                </time>
+              </span>
+              {post.data.description && (
+                <span class="mt-0.5 block text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {post.data.description}
+                </span>
+              )}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>

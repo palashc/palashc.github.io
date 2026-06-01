@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+import { getSeriesContext } from "../../lib/posts";
+import { BLOG_ENABLED } from "../../config";
+
+export async function getStaticPaths() {
+  if (!BLOG_ENABLED) return [];
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const seriesCtx = await getSeriesContext(post);
+---
+
+<PostLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  updated={post.data.updated}
+  tags={post.data.tags}
+  series={seriesCtx}
+>
+  <Content />
+</PostLayout>

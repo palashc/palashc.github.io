@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getSeriesList, getStandalonePosts, postUrl } from "../../lib/posts";
+import { BLOG_ENABLED } from "../../config";
+
+const series = BLOG_ENABLED ? await getSeriesList() : [];
+const standalone = BLOG_ENABLED ? await getStandalonePosts() : [];
+const isEmpty = series.length === 0 && standalone.length === 0;
+---
+
+<BaseLayout
+  title="Blog"
+  description="Series and posts on distributed systems, databases, and large-scale infrastructure."
+>
+  <h1
+    class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100"
+  >
+    Blog
+  </h1>
+  <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+    Series and posts on distributed systems, databases, and operating
+    large-scale infrastructure.
+  </p>
+
+  {
+    isEmpty && (
+      <p class="mt-8 text-sm text-zinc-500 dark:text-zinc-400">
+        Posts coming soon.
+      </p>
+    )
+  }
+
+  {
+    series.length > 0 && (
+      <section class="mt-10">
+        <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          Series
+        </h2>
+        <div class="space-y-3">
+          {series.map((s) => (
+            <a
+              href={`/blog/series/${s.slug}/`}
+              class="group block rounded-lg border border-zinc-200 p-4 transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:border-zinc-700 dark:hover:bg-zinc-900/40"
+            >
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-medium text-zinc-900 transition-colors group-hover:text-[var(--color-accent)] dark:text-zinc-100 dark:group-hover:text-[var(--color-accent-dark)]">
+                  {s.title}
+                </h3>
+                <span class="shrink-0 text-xs text-zinc-400 dark:text-zinc-500">
+                  {s.posts.length} {s.posts.length === 1 ? "post" : "posts"}
+                </span>
+              </div>
+              <p class="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                {s.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    standalone.length > 0 && (
+      <section class="mt-10">
+        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          Posts
+        </h2>
+        <div class="divide-y divide-zinc-100 dark:divide-zinc-800/60">
+          {standalone.map((post) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              url={postUrl(post)}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

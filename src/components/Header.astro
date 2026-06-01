@@ -1,0 +1,43 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import { SITE, BLOG_ENABLED } from "../config";
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? path === "/" : path.startsWith(href);
+
+const links = [
+  { href: "/", label: "Home" },
+  ...(BLOG_ENABLED ? [{ href: "/blog", label: "Blog" }] : []),
+];
+---
+
+<header
+  class="flex items-center justify-between border-b border-zinc-200 py-5 dark:border-zinc-800"
+>
+  <a
+    href="/"
+    class="font-semibold tracking-tight text-zinc-900 hover:text-[var(--color-accent)] dark:text-zinc-100 dark:hover:text-[var(--color-accent-dark)]"
+  >
+    {SITE.title}
+  </a>
+
+  <nav class="flex items-center gap-1 text-sm">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "rounded-md px-3 py-1.5 transition-colors",
+            isActive(link.href)
+              ? "font-medium text-zinc-900 dark:text-zinc-100"
+              : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100",
+          ]}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>

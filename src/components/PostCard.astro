@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  url: string;
+}
+
+const { title, description, date, url } = Astro.props;
+const formatted = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+const iso = date.toISOString();
+---
+
+<a href={url} class="group block py-4">
+  <article class="flex flex-col gap-1">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+      <h3
+        class="font-medium text-zinc-900 transition-colors group-hover:text-[var(--color-accent)] dark:text-zinc-100 dark:group-hover:text-[var(--color-accent-dark)]"
+      >
+        {title}
+      </h3>
+      <time
+        datetime={iso}
+        class="shrink-0 text-sm text-zinc-400 dark:text-zinc-500"
+      >
+        {formatted}
+      </time>
+    </div>
+    {
+      description && (
+        <p class="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          {description}
+        </p>
+      )
+    }
+  </article>
+</a>
