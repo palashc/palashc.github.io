@@ -1,13 +1,9 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
 import { SITE, BLOG_ENABLED } from "../config";
+import { getPosts } from "../lib/posts";
 
 export async function GET(context) {
-  const posts = BLOG_ENABLED
-    ? (await getCollection("blog", ({ data }) => !data.draft)).sort(
-        (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-      )
-    : [];
+  const posts = BLOG_ENABLED ? await getPosts() : [];
 
   return rss({
     title: SITE.title,

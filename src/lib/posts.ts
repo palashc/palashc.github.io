@@ -8,6 +8,18 @@ export type Series = SeriesMeta & {
   posts: Post[];
 };
 
+/**
+ * Whether a post should appear on the live site.
+ * - `draft: true` hides it indefinitely.
+ * - a `date` in the future hides it until that date passes (relative to the
+ *   build time), which lets you stage posts ahead and release on a schedule.
+ */
+export function isPublished(post: Post): boolean {
+  if (post.data.draft) return false;
+  if (post.data.date.getTime() > Date.now()) return false;
+  return true;
+}
+
 /** The series slug a post belongs to (its folder), or null if standalone. */
 export function seriesSlugOf(post: Post): string | null {
   const idx = post.id.indexOf("/");
@@ -18,10 +30,12 @@ export function postUrl(post: Post): string {
   return `/blog/${post.id}/`;
 }
 
-/** All published posts, newest first. */
+/** All published posts (excludes drafts and future-dated), newest first. */
 export async function getPosts(): Promise<Post[]> {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
-  return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const posts = await getCollection("blog");
+  return posts
+    .filter(isPublished)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
 /** Order within a series: by `order` first, then oldest-to-newest. */

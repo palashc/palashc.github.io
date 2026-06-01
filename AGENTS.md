@@ -94,6 +94,29 @@ real posts.
 - Order within a series is set by the optional `order:` frontmatter field
   (lower first; ties broken by date).
 
+### Hiding / scheduling individual posts
+
+A post is published only if it passes `isPublished()` in `src/lib/posts.ts`,
+which is the single gate used by every list, the post pages, series pages, and
+RSS. Two independent controls:
+
+- **`draft: true`** — hides the post indefinitely (until you set it to `false`).
+  Use this to accumulate finished-but-unannounced posts.
+- **Future `date:`** — a post whose `date` is later than the build time is
+  hidden until that date. This lets you queue posts and have them appear
+  automatically once their date arrives **and the site is rebuilt**.
+
+Because the site is statically built, a future-dated post only goes live the
+next time `npm run build` runs on/after that date. So:
+
+- **Manual weekly publishing:** keep upcoming posts as `draft: true` (or
+  future-dated). Each week, flip the next one to `draft: false`, then
+  `npm run build` + commit `docs/` + push.
+- **Hands-off scheduling:** future-date the posts and add a scheduled GitHub
+  Action (cron) that rebuilds and commits/deploys `docs/` on a timer; posts then
+  surface on their own as their dates pass. (Not set up yet — current workflow is
+  manual.)
+
 Post frontmatter schema (see `src/content.config.ts`):
 
 ```yaml

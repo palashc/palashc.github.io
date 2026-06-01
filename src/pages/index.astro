@@ -1,15 +1,11 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Experience from "../components/Experience.astro";
 import PostCard from "../components/PostCard.astro";
 import { SOCIALS, BLOG_ENABLED } from "../config";
+import { getPosts } from "../lib/posts";
 
-const posts = BLOG_ENABLED
-  ? (await getCollection("blog", ({ data }) => !data.draft)).sort(
-      (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-    )
-  : [];
+const posts = BLOG_ENABLED ? await getPosts() : [];
 const latest = posts.slice(0, 4);
 ---
 
