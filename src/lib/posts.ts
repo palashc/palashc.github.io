@@ -15,6 +15,8 @@ export type Series = SeriesMeta & {
  *   build time), which lets you stage posts ahead and release on a schedule.
  */
 export function isPublished(post: Post): boolean {
+  // In `astro dev`, show everything (drafts + future-dated) for previewing.
+  if (import.meta.env.DEV) return true;
   if (post.data.draft) return false;
   if (post.data.date.getTime() > Date.now()) return false;
   return true;

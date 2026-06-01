@@ -81,9 +81,10 @@ Most content edits do NOT require touching components. `src/config.ts` exports:
 
 ## Working with the blog
 
-The blog is currently **hidden** (`BLOG_ENABLED = false`) and contains only
-placeholder "hello world" content. To publish, set `BLOG_ENABLED = true` and add
-real posts.
+The blog is currently **hidden** (`BLOG_ENABLED = false`). Content is being
+written as draft outlines (e.g. the `phoenix-fundamentals` series). To publish,
+finish the posts, set `draft: false` on the ones that are ready, set
+`BLOG_ENABLED = true`, and rebuild.
 
 - **A series is a folder** under `src/content/blog/<series-slug>/`. Register its
   title/description in `SERIES` in `src/config.ts` (keyed by the folder name).

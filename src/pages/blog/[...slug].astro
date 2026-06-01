@@ -2,10 +2,10 @@
 import { render } from "astro:content";
 import PostLayout from "../../layouts/PostLayout.astro";
 import { getSeriesContext, getPosts } from "../../lib/posts";
-import { BLOG_ENABLED } from "../../config";
+import { BLOG_VISIBLE } from "../../config";
 
 export async function getStaticPaths() {
-  if (!BLOG_ENABLED) return [];
+  if (!BLOG_VISIBLE) return [];
   const posts = await getPosts();
   return posts.map((post) => ({
     params: { slug: post.id },

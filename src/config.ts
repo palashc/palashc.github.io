@@ -1,6 +1,11 @@
 // Feature flags. Flip BLOG_ENABLED to true to publish the blog (nav tab,
 // home "Latest posts" section, and all /blog routes) once real content is ready.
-export const BLOG_ENABLED = false;
+export const BLOG_ENABLED = true;
+
+// The blog (and draft posts) are always shown in `astro dev` so you can preview
+// work-in-progress locally, but a production `astro build` respects BLOG_ENABLED
+// and the per-post `draft` / future-date rules.
+export const BLOG_VISIBLE = BLOG_ENABLED || import.meta.env.DEV;
 
 export const SITE = {
   title: "Palash Chauhan",
@@ -18,10 +23,20 @@ export const SITE = {
 export type SeriesMeta = { title: string; description: string };
 
 export const SERIES: Record<string, SeriesMeta> = {
-  "sample-series": {
-    title: "Sample Series",
+  "phoenix-fundamentals": {
+    title: "Phoenix Fundamentals",
     description:
-      "A placeholder series. Replace this with a real series once the concrete content is ready.",
+      "How Apache Phoenix turns HBase into a SQL database: the storage layer it sits on, where Phoenix fits in the cluster, and how a query actually runs.",
+  },
+  "phoenix-features": {
+    title: "Phoenix Features",
+    description:
+      "The database features Phoenix layers on top of HBase: secondary indexes, atomic updates, TTL, and change data capture.",
+  },
+  "phoenix-dynamodb-parity": {
+    title: "Phoenix and DynamoDB Parity",
+    description:
+      "The features that bring the Phoenix DynamoDB adapter to life and let Phoenix serve DynamoDB-style workloads.",
   },
 };
 
@@ -50,7 +65,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     team: "Phoenix Database",
     period: "Jun 2021 – Present",
     location: "Seattle, WA (San Francisco, 2021–2023)",
-    tech: ["Apache HBase", "Apache Phoenix", "Distributed Systems", "Java"],
+    tech: ["Apache Phoenix", "Apache HBase", "Distributed Systems", "Java"],
   },
   {
     role: "Member of Technical Staff",
@@ -85,6 +100,7 @@ export const EDUCATION = [
   {
     degree: "MS in Computer Science",
     institution: "University of California, San Diego",
+    year: "2021",
   },
   {
     degree: "B.Tech in Computer Science",

@@ -2,10 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Experience from "../components/Experience.astro";
 import PostCard from "../components/PostCard.astro";
-import { SOCIALS, BLOG_ENABLED } from "../config";
+import { SOCIALS, BLOG_VISIBLE, EDUCATION } from "../config";
 import { getPosts } from "../lib/posts";
 
-const posts = BLOG_ENABLED ? await getPosts() : [];
+const posts = BLOG_VISIBLE ? await getPosts() : [];
 const latest = posts.slice(0, 4);
 ---
 
@@ -120,7 +120,34 @@ const latest = posts.slice(0, 4);
     <Experience />
   </section>
 
-  {BLOG_ENABLED && (
+  <section class="mt-14">
+    <h2
+      class="mb-6 text-sm font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500"
+    >
+      Education
+    </h2>
+    <ul class="space-y-3">
+      {
+        EDUCATION.map((e) => (
+          <li class="flex flex-wrap items-baseline justify-between gap-x-3">
+            <span class="text-zinc-900 dark:text-zinc-100">
+              <span class="font-medium">{e.degree}</span>
+              <span class="text-zinc-500 dark:text-zinc-400">
+                {" "}· {e.institution}
+              </span>
+            </span>
+            {e.year && (
+              <span class="text-sm text-zinc-500 dark:text-zinc-400">
+                {e.year}
+              </span>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {BLOG_VISIBLE && (
   <section class="mt-14">
     <div class="mb-6 flex items-baseline justify-between">
       <h2
