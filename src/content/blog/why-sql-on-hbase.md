@@ -26,8 +26,14 @@ That is the gap [Apache Phoenix](https://phoenix.apache.org/) fills. It puts a S
 and JDBC layer on top of HBase, so you keep the scale you need and get the
 interface you want.
 
-This blog is a series about how that works, and how far it can go. We start with
-the fundamentals: what HBase gives you, how Phoenix maps SQL onto it, and how a
-query actually runs.
+This blog works through how that is done, and how far it goes, in a few series:
 
-Start here: [Phoenix Fundamentals](/blog/series/phoenix-fundamentals/).
+- **[Phoenix Fundamentals](/blog/series/phoenix-fundamentals/)**: what HBase gives
+  you, how Phoenix maps SQL onto it, and how a query runs.
+- **[Phoenix Features](/blog/series/phoenix-features/)**: the database features
+  Phoenix layers on top, including views and multi-tenancy, secondary indexes,
+  TTL, and change data capture.
+- **Phoenix and DynamoDB parity**: the pieces that let Phoenix serve
+  DynamoDB-style workloads.
+
+Start with the fundamentals.

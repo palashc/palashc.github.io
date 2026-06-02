@@ -31,7 +31,7 @@ export const SERIES: Record<string, SeriesMeta> = {
   "phoenix-features": {
     title: "Phoenix Features",
     description:
-      "The database features Phoenix layers on top of HBase: secondary indexes, atomic updates, TTL, and change data capture.",
+      "Some of the database features Phoenix layers on top of HBase: views and multi-tenancy, secondary indexes, TTL, and change data capture.",
   },
   "phoenix-dynamodb-parity": {
     title: "Phoenix and DynamoDB Parity",

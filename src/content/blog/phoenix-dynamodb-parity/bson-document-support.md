@@ -1,5 +1,5 @@
 ---
-title: "BSON document support in Phoenix"
+title: "BSON document support"
 description: "Storing and querying document-shaped data in Phoenix, and why it matters for DynamoDB parity."
 date: 2026-05-11
 order: 2
