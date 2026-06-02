@@ -20,23 +20,38 @@ export const SITE = {
 // Blog series. The key is the folder name under src/content/blog/<slug>/.
 // Posts placed directly in src/content/blog/ (not in a series folder) are
 // treated as standalone posts.
-export type SeriesMeta = { title: string; description: string };
+export type SeriesMeta = {
+  title: string;
+  description: string;
+  // Where to send the reader after the last post in this series. Rendered as a
+  // bottom-of-post "Up next" arrow on the final post.
+  next?: { title: string; href: string };
+};
 
 export const SERIES: Record<string, SeriesMeta> = {
   "phoenix-fundamentals": {
     title: "Phoenix Fundamentals",
     description:
       "How Apache Phoenix turns HBase into a SQL database: the storage layer it sits on, where Phoenix fits in the cluster, and how a query actually runs.",
+    next: { title: "Phoenix Features", href: "/blog/series/phoenix-features/" },
   },
   "phoenix-features": {
     title: "Phoenix Features",
     description:
       "Some of the database features Phoenix layers on top of HBase: views and multi-tenancy, secondary indexes, TTL, and change data capture.",
+    next: {
+      title: "Phoenix and DynamoDB Parity",
+      href: "/blog/series/phoenix-dynamodb-parity/",
+    },
   },
   "phoenix-dynamodb-parity": {
     title: "Phoenix and DynamoDB Parity",
     description:
       "The features that move Phoenix toward DynamoDB-style workloads: BSON documents, eventually consistent indexes, and a richer change stream.",
+    next: {
+      title: "phoenix-adapters: DynamoDB on Phoenix",
+      href: "/blog/phoenix-adapters-service/",
+    },
   },
 };
 

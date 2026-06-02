@@ -56,6 +56,7 @@ flowchart LR
     p3(["empty cell"])
   end
   up -->|"Puts"| region
+  style p3 stroke:#f59e0b,stroke-width:4px
 ```
 
 That empty cell from the last post is written here too, so the row exists even
@@ -86,9 +87,9 @@ flowchart LR
   client --> k1
   client --> k2
   client --> k3
-  style k1 fill:#fcd34d,color:#78350f,stroke:#f59e0b
-  style k2 fill:#fcd34d,color:#78350f,stroke:#f59e0b
-  style k3 fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style k1 stroke:#f59e0b,stroke-width:4px
+  style k2 stroke:#f59e0b,stroke-width:4px
+  style k3 stroke:#f59e0b,stroke-width:4px
 ```
 
 Other customers' rows sit before and after, but because rows are sorted by
@@ -134,5 +135,5 @@ A primary key encoded into a rowkey, columns and an empty cell stored as Puts,
 range scans that exploit sort order, and coprocessors that compute next to the
 data. Put together, that is how Phoenix turns plain HBase into a SQL database.
 
-In the next series, we will cover more advanced features built on top of this
+In the next series we will cover more advanced features built on top of this
 foundation.

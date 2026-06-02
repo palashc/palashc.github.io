@@ -59,8 +59,8 @@ flowchart TB
   iA2 --> cA
   iB1 --> cB
   iB2 --> cB
-  style iA1 fill:#fcd34d,color:#78350f,stroke:#f59e0b
-  style iA2 fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style iA1 stroke:#f59e0b,stroke-width:4px
+  style iA2 stroke:#f59e0b,stroke-width:4px
 ```
 
 Because the index is uncovered, it stays small: it records that a row changed and

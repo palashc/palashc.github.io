@@ -20,14 +20,6 @@ A few things hold across every flavor of it:
 - **Expired rows leave in two stages.** They stop showing up in queries right
   away, and are physically removed later, during major compaction.
 
-```mermaid
-flowchart LR
-  w["UPSERT a row (starts or refreshes the clock)"] --> live["row is live"]
-  live -->|"TTL elapses"| exp["hidden from queries"]
-  exp -->|"major compaction"| gone["removed from disk"]
-  style exp fill:#fcd34d,color:#78350f,stroke:#f59e0b
-```
-
 The TTL property takes a number of seconds, FOREVER, NONE, or a boolean SQL
 expression. Those last two map onto the three granularities below.
 

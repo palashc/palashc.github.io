@@ -91,7 +91,7 @@ flowchart LR
   cp -->|"1. index row = unverified"| idx
   cp -->|"2. update"| drow
   cp -->|"3. index row = verified"| idx
-  style cp fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style cp stroke:#f59e0b,stroke-width:4px
 ```
 
 This unverified-then-verified status, applied in two steps around the data write,
@@ -120,7 +120,7 @@ flowchart LR
   q["Query via the index"] --> c{"check the empty column"}
   c -->|"verified"| use["use the index row"]
   c -->|"unverified"| repair["repair from the data table, then use it"]
-  style repair fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style repair stroke:#f59e0b,stroke-width:4px
 ```
 
 Because unverified rows only appear after a failure or a race, this happens

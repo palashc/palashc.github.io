@@ -83,7 +83,7 @@ index table in step, around the data write, in three ordered steps:</p>
   cp -->|"1. index row = unverified"| idx
   cp -->|"2. update"| drow
   cp -->|"3. index row = verified"| idx
-  style cp fill:#fcd34d,color:#78350f,stroke:#f59e0b</pre>
+  style cp stroke:#f59e0b,stroke-width:4px</pre>
 <p>This unverified-then-verified status, applied in two steps around the data write,
 is essentially a <a href="https://en.wikipedia.org/wiki/Two-phase_commit_protocol">two-phase commit</a>
 on the index row: the first step prepares it, the second commits it once the data
@@ -104,7 +104,7 @@ rebuilds the correct answer, and repairs the index row before returning results:
   q["Query via the index"] --> c{"check the empty column"}
   c -->|"verified"| use["use the index row"]
   c -->|"unverified"| repair["repair from the data table, then use it"]
-  style repair fill:#fcd34d,color:#78350f,stroke:#f59e0b</pre>
+  style repair stroke:#f59e0b,stroke-width:4px</pre>
 <p>Because unverified rows only appear after a failure or a race, this happens
 rarely, and a read is always consistent with the data table. A background process
 sweeps up stale rows over time.</p>

@@ -168,7 +168,8 @@ is ever stored:</p>
     obs -->|"email present"| store
     obs -->|"missing"| reject["Reject the write"]
   end
-  app --> obs</pre>
+  app --> obs
+  style obs stroke:#f59e0b,stroke-width:4px</pre>
 <p>The rule now lives with the data and applies to every client automatically, no
 matter who is writing or from where.</p>
 <h3 id="2-endpoint-like-a-stored-procedure">2. Endpoint, like a stored procedure</h3>
@@ -189,7 +190,9 @@ counts locally and returns a single number; the client just adds them up:</p>
   client -->|"invoke"| e1
   client -->|"invoke"| e2
   e1 -->|"partial = 1,200,000"| merge["Client adds partials = 2,100,000"]
-  e2 -->|"partial = 900,000"| merge</pre>
+  e2 -->|"partial = 900,000"| merge
+  style e1 stroke:#f59e0b,stroke-width:4px
+  style e2 stroke:#f59e0b,stroke-width:4px</pre>
 <p>Kilobytes cross the network instead of gigabytes. The recurring theme is
 push-down computation, moving code to the data rather than data to the code.</p>
 <p>So keep coprocessors front of mind. They are the mechanism that lets a much richer

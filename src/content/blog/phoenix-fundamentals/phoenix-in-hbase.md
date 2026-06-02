@@ -61,7 +61,7 @@ block-beta
   a["customer_id (VARCHAR)"] b["0x00 separator"] c["order_id (INTEGER)"]
   rowkey["one contiguous, sorted HBase rowkey"]:3
   style b fill:#6b7280,color:#fff,stroke:#374151
-  style rowkey fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style rowkey stroke:#f59e0b,stroke-width:4px
 ```
 
 That single fact is why primary key design matters so much in Phoenix: the key is
@@ -88,8 +88,8 @@ block-beta
     t2["cell-2"]:3
     b1["rowkey: acme | 1007"] b2["column: status"] b3["value: shipped"]
   end
-  style a1 fill:#fcd34d,color:#78350f,stroke:#f59e0b
-  style b1 fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style a1 stroke:#f59e0b,stroke-width:4px
+  style b1 stroke:#f59e0b,stroke-width:4px
 ```
 
 The rowkey (highlighted) is repeated in every cell, which is why short keys and
@@ -127,6 +127,7 @@ flowchart LR
   client --> ep
   ep -->|"valid"| ok["Update the catalog"]
   ep -->|"breaks a rule"| reject["Reject the change"]
+  style ep stroke:#f59e0b,stroke-width:4px
 ```
 
 And this is only the beginning. Coprocessors are not a one-off for the catalog;

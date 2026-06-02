@@ -41,7 +41,7 @@ flowchart TB
   p0 -->|"split"| p2["P2"]
   p1 -->|"merge"| p3["P3"]
   p2 -->|"merge"| p3
-  style p3 fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style p3 stroke:#f59e0b,stroke-width:4px
 ```
 
 Reading SYSTEM.CDC_STREAM shows the same shape. A split gives two rows that share

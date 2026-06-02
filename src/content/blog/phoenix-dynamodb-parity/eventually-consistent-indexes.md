@@ -47,7 +47,7 @@ flowchart LR
   data -. "later" .-> consumer["Per-region consumer reads the CDC stream"]
   consumer --> i1["index 1"]
   consumer --> i2["index 2"]
-  style data fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style data stroke:#f59e0b,stroke-width:4px
 ```
 
 The consumer does not recompute the index entries from scratch. The same
@@ -66,7 +66,7 @@ flowchart TB
   a["region A: drained first"]
   a -->|"split"| b["region B: then consumed"]
   a -->|"split"| c["region C: then consumed"]
-  style a fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style a stroke:#f59e0b,stroke-width:4px
 ```
 
 That ordering is what keeps the index correct through topology changes.

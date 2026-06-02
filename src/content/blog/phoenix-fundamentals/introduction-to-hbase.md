@@ -154,6 +154,7 @@ flowchart LR
     obs -->|"missing"| reject["Reject the write"]
   end
   app --> obs
+  style obs stroke:#f59e0b,stroke-width:4px
 ```
 
 The rule now lives with the data and applies to every client automatically, no
@@ -182,6 +183,8 @@ flowchart TB
   client -->|"invoke"| e2
   e1 -->|"partial = 1,200,000"| merge["Client adds partials = 2,100,000"]
   e2 -->|"partial = 900,000"| merge
+  style e1 stroke:#f59e0b,stroke-width:4px
+  style e2 stroke:#f59e0b,stroke-width:4px
 ```
 
 Kilobytes cross the network instead of gigabytes. The recurring theme is

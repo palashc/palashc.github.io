@@ -66,22 +66,23 @@ its own rows:</p>
     a3["acme | electronics | 1015"]
     b1["globex | books | 2004"]
     b2["globex | electronics | 2001"]
+    a1 ~~~ a2
+    a2 ~~~ a3
+    a3 ~~~ b1
+    b1 ~~~ b2
   end
   ca --> a1
-  ca --> a2
-  ca --> a3
   cb --> b1
-  cb --> b2
-  style a1 fill:#fcd34d,color:#78350f,stroke:#f59e0b
-  style a2 fill:#fcd34d,color:#78350f,stroke:#f59e0b
-  style a3 fill:#fcd34d,color:#78350f,stroke:#f59e0b</pre>
+  style a1 stroke:#f59e0b,stroke-width:4px
+  style a2 stroke:#f59e0b,stroke-width:4px
+  style a3 stroke:#f59e0b,stroke-width:4px</pre>
 <p>Because the tenant id leads the rowkey, each tenant’s data is one contiguous,
 isolated block, with category grouping the rows within it:</p>
 <pre class="mermaid">block-beta
   columns 5
   t["tenant_id (VARCHAR)"] s1["0x00"] c["category (VARCHAR)"] s2["0x00"] o["order_id (INTEGER)"]
   rk["one rowkey: tenant_id groups each tenant, category groups within a tenant"]:5
-  style t fill:#fcd34d,color:#78350f,stroke:#f59e0b
+  style t stroke:#f59e0b,stroke-width:4px
   style s1 fill:#6b7280,color:#fff,stroke:#374151
   style s2 fill:#6b7280,color:#fff,stroke:#374151</pre>
 <p>Tenants can also create their own views on top, to add columns or filters that are

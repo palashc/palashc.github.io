@@ -49,6 +49,9 @@ flowchart TB
   r2 --> px
   r3 --> px
   px --> hb
+  style r1 stroke:#f59e0b,stroke-width:4px
+  style r2 stroke:#f59e0b,stroke-width:4px
+  style r3 stroke:#f59e0b,stroke-width:4px
 ```
 
 The REST process is stateless: all the state lives in HBase. So you run as many
