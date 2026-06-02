@@ -33,7 +33,7 @@ This blog works through how that is done, and how far it goes, in a few series:
 - **[Phoenix Features](/blog/series/phoenix-features/)**: the database features
   Phoenix layers on top, including views and multi-tenancy, secondary indexes,
   TTL, and change data capture.
-- **Phoenix and DynamoDB parity**: the pieces that let Phoenix serve
-  DynamoDB-style workloads.
+- **[Phoenix and DynamoDB parity](/blog/series/phoenix-dynamodb-parity/)**: the
+  pieces that let Phoenix serve DynamoDB-style workloads.
 
 Start with the fundamentals.

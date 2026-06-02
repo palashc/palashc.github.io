@@ -36,7 +36,7 @@ export const SERIES: Record<string, SeriesMeta> = {
   "phoenix-dynamodb-parity": {
     title: "Phoenix and DynamoDB Parity",
     description:
-      "The features that bring the Phoenix DynamoDB adapter to life and let Phoenix serve DynamoDB-style workloads.",
+      "The features that move Phoenix toward DynamoDB-style workloads: BSON documents, eventually consistent indexes, and a richer change stream.",
   },
 };
 
