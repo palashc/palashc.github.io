@@ -17,6 +17,11 @@ export const SITE = {
   org: "Salesforce",
 };
 
+// Google Analytics (GA4) measurement ID. The tag is injected into every page
+// via BaseLayout, but only in production builds, so local `astro dev` traffic is
+// not counted. Set to an empty string to disable analytics entirely.
+export const GA_MEASUREMENT_ID = "G-6W6JLN1TGW";
+
 // Blog series. The key is the folder name under src/content/blog/<slug>/.
 // Posts placed directly in src/content/blog/ (not in a series folder) are
 // treated as standalone posts.
