@@ -1,6 +1,6 @@
 ---
 title: "Change Streams and Partition Lineage"
-description: "Why an ordered consumer needs region lineage, and how Phoenix tracks it as stream metadata in SYSTEM.CDC_STREAM."
+description: "Why a CDC consumer needs partition lineage, and how Phoenix tracks it as stream metadata."
 date: 2026-05-18
 order: 2
 tags: ["phoenix", "cdc", "streams", "phoenix-dynamodb-parity"]
