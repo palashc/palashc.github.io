@@ -2,14 +2,30 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Experience from "../components/Experience.astro";
 import PostCard from "../components/PostCard.astro";
-import { SOCIALS, BLOG_VISIBLE, EDUCATION } from "../config";
+import { SITE, SOCIALS, BLOG_VISIBLE, EDUCATION } from "../config";
 import { getPosts } from "../lib/posts";
 
 const posts = BLOG_VISIBLE ? await getPosts() : [];
 const latest = posts.slice(0, 4);
+
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.author,
+  url: SITE.url,
+  jobTitle: SITE.role,
+  worksFor: { "@type": "Organization", name: SITE.org },
+  sameAs: [SOCIALS.github, SOCIALS.linkedin],
+};
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.title,
+  url: SITE.url,
+};
 ---
 
-<BaseLayout>
+<BaseLayout jsonLd={[personLd, websiteLd]}>
   <section class="flex flex-col gap-6 sm:flex-row sm:items-center">
     <img
       src="/avatar.jpg"

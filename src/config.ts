@@ -99,8 +99,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     role: "Research Intern",
     company: "Adobe",
-    companyUrl:
-      "https://research.adobe.com/about-adobe-research/bigdata-experience-lab/",
+    companyUrl: "https://research.adobe.com/careers/bangalore/",
     team: "Big Data Experience Lab",
     period: "May 2016 – Jul 2016",
     location: "Bengaluru, India",
@@ -109,7 +108,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     role: "Software Development Intern",
     company: "Monet Networks",
-    companyUrl: "http://monetnetworks.com/",
+    companyUrl: "https://www.monetanalytics.com/",
     period: "May 2015 – Jul 2015",
     location: "Gurgaon, India",
     tech: ["PHP", "MySQL", "JavaScript"],

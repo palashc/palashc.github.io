@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { postUrl, type Post } from "../lib/posts";
-import type { SeriesMeta } from "../config";
+import { SITE, type SeriesMeta } from "../config";
 
 interface SeriesContext {
   slug: string;
@@ -28,9 +28,32 @@ const fmt = (d: Date) =>
     month: "long",
     day: "numeric",
   });
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const blogPostingLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  ...(description ? { description } : {}),
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  author: { "@type": "Person", name: SITE.author, url: SITE.url },
+  publisher: { "@type": "Person", name: SITE.author, url: SITE.url },
+  mainEntityOfPage: canonical,
+  image: new URL("/og.png", Astro.site).toString(),
+  ...(tags.length ? { keywords: tags.join(", ") } : {}),
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  publishedTime={date}
+  modifiedTime={updated}
+  tags={tags}
+  jsonLd={blogPostingLd}
+>
   <article>
     <header class="mb-8">
       {
