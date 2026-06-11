@@ -120,6 +120,13 @@ makes a handy little backend when you just want something DynamoDB-shaped behind
 project without standing up the real thing. Spin it up, kick the tires, and let me
 know what breaks.
 
+## ⭐ Star the repo
+
+If you try it and it helps, a star on
+[apache/phoenix-adapters](https://github.com/apache/phoenix-adapters) goes a long
+way. It helps others find the project and signals that this kind of DynamoDB
+compatibility is worth investing in.
+
 ## 📚 Further reading
 
 - [apache/phoenix-adapters](https://github.com/apache/phoenix-adapters)

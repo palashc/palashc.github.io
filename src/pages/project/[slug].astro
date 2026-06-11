@@ -131,7 +131,7 @@ const linkIcons: Record<string, string> = {
     }
 
     <div
-      class="prose prose-zinc max-w-none prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline dark:prose-invert dark:prose-a:text-[var(--color-accent-dark)]"
+      class="prose prose-zinc max-w-none prose-a:text-[var(--color-accent)] prose-a:no-underline [&_a:hover]:underline dark:prose-invert dark:prose-a:text-[var(--color-accent-dark)]"
     >
       {project.body.map((p) => <p>{p}</p>)}
     </div>
