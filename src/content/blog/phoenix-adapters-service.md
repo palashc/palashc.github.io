@@ -3,6 +3,7 @@ title: "phoenix-adapters: DynamoDB on Phoenix"
 description: "Your DynamoDB app, unchanged, on Apache Phoenix. No new SDK, no new data model, no rewrite."
 date: 2026-06-01
 tags: ["phoenix", "dynamodb", "announcement"]
+repo: "https://github.com/apache/phoenix-adapters"
 draft: false
 ---
 

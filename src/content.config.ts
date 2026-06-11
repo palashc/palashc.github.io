@@ -11,6 +11,8 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     // Position within a series (lower shows first). Series itself is the folder.
     order: z.number().optional(),
+    // Optional GitHub repo link, rendered as a button under the post title.
+    repo: z.string().url().optional(),
     draft: z.boolean().default(false),
   }),
 });
