@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { PROJECTS } from "../../data/projects";
+
+const sorted = [...PROJECTS].sort(
+  (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+);
+
+const groups = [
+  { school: "UC San Diego", label: "Graduate · UC San Diego" },
+  { school: "IIT Kanpur", label: "Undergraduate · IIT Kanpur" },
+];
+
+const year = (d: string) => new Date(d).getFullYear();
+---
+
+<BaseLayout
+  title="Projects"
+  description="Course projects from grad school and undergrad, spanning distributed systems and machine learning."
+>
+  <section class="mb-10">
+    <h1
+      class="text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-100"
+    >
+      Projects
+    </h1>
+    <p class="mt-3 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      A few course projects from grad school and undergrad, spanning distributed
+      systems and machine learning.
+    </p>
+  </section>
+
+  {
+    groups.map((g) => {
+      const items = sorted.filter((p) => p.school === g.school);
+      return items.length === 0 ? null : (
+        <section class="mb-12">
+          <h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+            {g.label}
+          </h2>
+          <div class="divide-y divide-zinc-100 dark:divide-zinc-800/60">
+            {items.map((p) => (
+              <a href={`/project/${p.slug}/`} class="group block py-4">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                  <h3 class="font-medium text-zinc-900 group-hover:text-[var(--color-accent)] dark:text-zinc-100 dark:group-hover:text-[var(--color-accent-dark)]">
+                    {p.title}
+                  </h3>
+                  <span class="text-sm text-zinc-400 dark:text-zinc-500">
+                    {year(p.date)}
+                  </span>
+                </div>
+                <p class="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {p.description}
+                </p>
+                <div class="mt-2 flex flex-wrap items-center gap-2">
+                  {p.award && (
+                    <span class="inline-flex items-center gap-1 rounded-full border border-amber-400/60 bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-300">
+                      🏆 {p.award.label}
+                    </span>
+                  )}
+                  {p.tags.map((t) => (
+                    <span class="rounded bg-zinc-100 px-1.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
+</BaseLayout>
